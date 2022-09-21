@@ -1,0 +1,56 @@
+.theme-wrapper {
+  position: fixed;
+  top: 15%;
+  right: -180px;
+  width: 180px;
+  z-index: 100;
+  transition: all 0.5s ease;
+
+  &.active {
+    right: 0;
+  }
+  &.hasHeader {
+    top: 30%;
+  }
+
+  &__toggle-icon {
+    position: absolute;
+    top: 0px;
+    left: -60px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+
+    svg {
+      animation-name: spin;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      animation-duration: 3s;
+      color: var(--selected-theme-main-color);
+    }
+  }
+
+  &__menu {
+    ul {
+      display: flex;
+      gap: 5px;
+
+      li {
+        list-style: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
